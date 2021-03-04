@@ -19,7 +19,7 @@ RUN apt-get update \
     && \
     rm /var/lib/apt/lists/* -r \
     && \
-    adduser arma3 \
+    useradd arma3 \
     && \
     mkdir -p /steamcmd \
         && cd /steamcmd \

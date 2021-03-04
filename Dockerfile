@@ -2,6 +2,8 @@ FROM debian:buster-slim
 
 LABEL maintainer="ejpo - github.com/ejpo"
 
+ADD launch.py /launch.py
+
 RUN apt-get update \
     && \
     apt-get install -y --no-install-recommends --no-install-suggests \
@@ -24,10 +26,11 @@ RUN apt-get update \
     mkdir -p /steamcmd \
         && cd /steamcmd \
         && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - \
-        && chown arma3:arma3 /steamcmd \
+        && chown -R arma3:arma3 /steamcmd \
     && \
     mkdir /arma3 \
-        && chown arma3:arma3 /arma3
+        && chown -R arma3:arma3 /arma3 \
+    && chown arma3:arma3 /launch.py
 
 
 ENV ARMA_BINARY=./arma3server \
@@ -44,8 +47,6 @@ EXPOSE 2302/udp \
        2304/udp \
        2305/udp \
        2306/udp
-
-ADD launch.py /launch.py
 
 VOLUME /steamcmd
 

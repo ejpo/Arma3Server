@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-LABEL maintainer="Brett - github.com/synixebrett"
+LABEL maintainer="ejpo - github.com/ejpo"
 
 RUN apt-get update \
     && \
@@ -19,30 +19,39 @@ RUN apt-get update \
     && \
     rm /var/lib/apt/lists/* -r \
     && \
+    adduser arma3 \
+    && \
     mkdir -p /steamcmd \
         && cd /steamcmd \
-        && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf -
+        && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - \
+        && chown arma3:arma3 /steamcmd \
+    && \
+    mkdir /arma3 \
+        && chown arma3:arma3 /arma3
 
-ENV ARMA_BINARY=./arma3server
-ENV ARMA_CONFIG=main.cfg
-ENV ARMA_PROFILE=main
-ENV ARMA_WORLD=empty
-ENV HEADLESS_CLIENTS=0
-ENV PORT=2302
-ENV STEAM_BRANCH=public
-ENV STEAM_BRANCH_PASSWORD=
 
-EXPOSE 2302/udp
-EXPOSE 2303/udp
-EXPOSE 2304/udp
-EXPOSE 2305/udp
-EXPOSE 2306/udp
+ENV ARMA_BINARY=./arma3server \
+    ARMA_CONFIG=main.cfg \
+    ARMA_PROFILE=main \
+    ARMA_WORLD=empty \
+    HEADLESS_CLIENTS=0 \
+    PORT=2302 \
+    STEAM_BRANCH=public \
+    STEAM_BRANCH_PASSWORD=
+
+EXPOSE 2302/udp \
+       2303/udp \
+       2304/udp \
+       2305/udp \
+       2306/udp
 
 ADD launch.py /launch.py
 
-WORKDIR /arma3
-
 VOLUME /steamcmd
+
+USER arma3
+
+WORKDIR /arma3
 
 STOPSIGNAL SIGINT
 

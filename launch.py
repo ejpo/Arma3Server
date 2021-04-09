@@ -45,8 +45,8 @@ def mods(d):
 launch = "{} -world={}".format(os.environ["ARMA_BINARY"], os.environ["ARMA_WORLD"])
 
 # Append mods to the launch params if they exist
-#if os.path.exists("mods"):
-#    launch += " -mod={}".format(mods("mods"))
+if os.path.exists("mods"):
+    launch += " -mod={}".format(os.environ["ARMA_MODLINE"])
 
 clients = int(os.environ["HEADLESS_CLIENTS"])
 
@@ -85,7 +85,7 @@ if clients != 0:
 else:
     launch += " -config=\"/arma3/configs/{}\"".format(CONFIG_FILE)
 
-launch += " -port={} -name=\"{}\" -profiles=\"/arma3/configs/profiles\" -mod=\"{}\"".format(os.environ["PORT"], os.environ["ARMA_PROFILE"], os.environ["ARMA_MODLINE"])
+launch += " -port={} -name=\"{}\" -profiles=\"/arma3/configs/profiles\"".format(os.environ["PORT"], os.environ["ARMA_PROFILE"])
 
 if os.path.exists("servermods"):
     launch += " -serverMod={}".format(mods("servermods"))

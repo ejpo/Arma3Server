@@ -85,13 +85,11 @@ if clients != 0:
 else:
     launch += " -config=\"/arma3/configs/{}\"".format(CONFIG_FILE)
 
-launch += " -port={} -name=\"{}\" -profiles=\"/arma3/configs/profiles\"".format(os.environ["PORT"], os.environ["ARMA_PROFILE"])
+launch += " -port={} -name=\"{}\" -profiles=\"/arma3/configs/profiles\" -mod=\"{}\"".format(os.environ["PORT"], os.environ["ARMA_PROFILE"], os.environ["ARMA_MODLINE"])
 
 if os.path.exists("servermods"):
     launch += " -serverMod={}".format(mods("servermods"))
 
 print("LAUNCHING ARMA SERVER WITH",launch, flush=True)
 
-print("DEBUG SLEEP")
-time.sleep(3000)
 os.system(launch)

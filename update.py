@@ -34,7 +34,7 @@ from datetime import datetime
 from urllib import request
 
 # region Configuration
-STEAM_CMD = "/opt/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
+STEAM_CMD = "/steamcmd/steamcmd.sh"  # Alternatively "steamcmd" if package is installed
 STEAM_USER = os.environ["STEAM_USER"]
 STEAM_PASS = os.environ["STEAM_PASSWORD"]
 

@@ -64,6 +64,7 @@ MODS = {
     "@3cb_baf_equipment":   "893328083",
     "@3cb_baf_vehicles":    "893349825",
     "@3cb_baf_units":       "893346105",
+    "@tfar_beta":           "894678801",
     "@sosmod":              "2208980698",
     "@blastcore":           "767380317",
     "@blastcore_server":    "855973772"

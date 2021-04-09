@@ -39,7 +39,7 @@ STEAM_USER = os.environ["STEAM_USER"]
 STEAM_PASS = os.environ["STEAM_PASSWORD"]
 
 A3_SERVER_ID = "233780"
-A3_SERVER_DIR = "/opt/armamods"
+A3_SERVER_DIR = "/arma3"
 A3_WORKSHOP_ID = "107410"
 
 A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)

@@ -3,6 +3,8 @@ FROM debian:buster-slim
 LABEL maintainer="ejpo - github.com/ejpo"
 
 ADD launch.py /launch.py
+ADD entrypoint.sh /entrypoint.sh
+ADD update.py /update.py
 
 RUN apt-get update \
     && \
@@ -12,6 +14,7 @@ RUN apt-get update \
         lib32gcc1 \
         wget \
         ca-certificates \
+        rename \
     && \
     apt-get remove --purge -y \
     && \
@@ -30,7 +33,9 @@ RUN apt-get update \
     && \
     mkdir /arma3 \
         && chown -R arma3:arma3 /arma3 \
-    && chown arma3:arma3 /launch.py
+    && chown arma3:arma3 /launch.py \
+    && chown arma3:arma3 /update.py \
+    && chown arma3:arma3 /entrypoint.sh
 
 
 ENV ARMA_BINARY=./arma3server \
@@ -56,4 +61,4 @@ WORKDIR /arma3
 
 STOPSIGNAL SIGINT
 
-CMD ["python3","/launch.py"]
+CMD ["bash","/entrypoint.sh"]

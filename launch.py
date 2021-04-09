@@ -2,15 +2,18 @@ import subprocess
 import os
 import shutil
 import re
+import time
 
 CONFIG_FILE = os.environ["ARMA_CONFIG"]
 KEYS = "/arma3/keys"
 
+#Mod Keys
 if not os.path.exists(KEYS) or not os.path.isdir(KEYS):
     if os.path.exists(KEYS):
         os.remove(KEYS)
     os.makedirs(KEYS)
 
+#Craft Steam CMD update command
 steamcmd = ["/steamcmd/steamcmd.sh"]
 steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]])
 steamcmd.extend(["+force_install_dir", "/arma3"])
@@ -22,6 +25,8 @@ if "STEAM_BRANCH_PASSWORD" in os.environ and len(os.environ["STEAM_BRANCH_PASSWO
 steamcmd.extend(["validate", "+quit"])
 subprocess.call(steamcmd)
 
+# Create a mod launch parameter
+# Also copy keys for each mod
 def mods(d):
     launch = "\""
     mods = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))]
@@ -36,8 +41,10 @@ def mods(d):
             print("Missing keys:", keysdir)
     return launch+"\""
 
+# Initial Launch parameters set
 launch = "{} -world={}".format(os.environ["ARMA_BINARY"], os.environ["ARMA_WORLD"])
 
+# Append mods to the launch params if they exist
 if os.path.exists("mods"):
     launch += " -mod={}".format(mods("mods"))
 
@@ -84,4 +91,7 @@ if os.path.exists("servermods"):
     launch += " -serverMod={}".format(mods("servermods"))
 
 print("LAUNCHING ARMA SERVER WITH",launch, flush=True)
+
+print("DEBUG SLEEP")
+time.sleep(3000)
 os.system(launch)

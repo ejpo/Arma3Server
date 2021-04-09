@@ -45,8 +45,8 @@ def mods(d):
 launch = "{} -world={}".format(os.environ["ARMA_BINARY"], os.environ["ARMA_WORLD"])
 
 # Append mods to the launch params if they exist
-if os.path.exists("mods"):
-    launch += " -mod={}".format(mods("mods"))
+#if os.path.exists("mods"):
+#    launch += " -mod={}".format(mods("mods"))
 
 clients = int(os.environ["HEADLESS_CLIENTS"])
 

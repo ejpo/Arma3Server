@@ -54,6 +54,7 @@ MODS = {
     "@alive":               "620260972",
     "@cup_terrains_core":   "583496184",
     "@cup_terrains_maps":   "583544987",
+    "@uzbin":               "1882424760",
     #"@cup_weapons":         "497660133",
     #"@cup_units":           "497661914",
     #"@cup_vehicles":        "541888371",

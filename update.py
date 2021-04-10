@@ -64,21 +64,28 @@ MODS = {
     "@3cb_baf_equipment":   "893328083",
     "@3cb_baf_vehicles":    "893349825",
     "@3cb_baf_units":       "893346105",
+    "@rksl_attachment":     "1661066023",
+    "@jsrssound":           "861133494",
+    "@jsrssound_AFRF":      "861133494",
+    "@jsrssound_USAF":      "1180533757",
+    "@jsrssound_GREF":      "1180534892",
     "@tfar_beta":           "894678801",
     "@sosmod":              "2208980698",
+    "@zeusenahnced":        "1779063631",
     "@blastcore":           "767380317",
     "@blastcore_server":    "855973772"
 }
 # Only mod names go here, server/optional mods also need to be listed in MODS
 SERVER_MODS = {
-    "@blastcore_server"
+    "@blastcore_server",
+    "@zeusenahnced"
 }
 OPTIONAL_MODS = {
     "@blastcore"
 }
 
 DLC = {
-    "Global Mobilization": "1042220"
+    #"Global Mobilization": "1042220"
 }
 UPDATE_PATTERN = re.compile(r"workshopAnnouncement.*?<p id=\"(\d+)\">", re.DOTALL)
 TITLE_PATTERN = re.compile(r"(?<=<div class=\"workshopItemTitle\">)(.*?)(?=<\/div>)", re.DOTALL)

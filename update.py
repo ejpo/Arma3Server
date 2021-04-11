@@ -70,7 +70,7 @@ MODS = {
     "@usafutility":         "2397376046",
     "@rksl_attachment":     "1661066023",
     "@jsrssound":           "861133494",
-    "@jsrssound_afrf":      "861133494",
+    "@jsrssound_afrf":      "945476727",
     "@jsrssound_usaf":      "1180533757",
     "@jsrssound_gref":      "1180534892",
     "@tfar_beta":           "894678801",

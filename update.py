@@ -51,7 +51,7 @@ MODPACK_PATH = "/arma3/sos-modpack.html"
 MODS = {
     "@cba_a3":              "450814997",
     "@ace3":                "463939057",
-    "@alive":               "620260972",
+    #"@alive":               "620260972",
     "@cup_terrains_core":   "583496184",
     "@cup_terrains_maps":   "583544987",
     "@uzbin":               "1882424760",

@@ -61,6 +61,7 @@ MODS = {
     "@rhsafrf":             "843425103",
     "@rhsusaf":             "843577117",
     "@rhsgref":             "843593391",
+    "@rhssaf":              "843632231",
     "@3cb_baf_weapons":     "893339590",
     "@3cb_baf_equipment":   "893328083",
     "@3cb_baf_vehicles":    "893349825",

@@ -68,6 +68,7 @@ MODS = {
     "@3cb_baf_equipment":   "893328083",
     "@3cb_baf_vehicles":    "893349825",
     "@3cb_baf_units":       "893346105",
+    "@sam":                 "566915582",
     "@usafmain":            "2397360831",
     "@usaffighter":         "2397371875",
     "@usafutility":         "2397376046",

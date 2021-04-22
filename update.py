@@ -56,6 +56,7 @@ MODS = {
     "@cup_terrains_maps":   "583544987",
     "@uzbin":               "1882424760",
     "@fallujah":            "908733096",
+    "@paulin":              "1423583812",
     "@cup_weapons":         "497660133",
     "@cup_units":           "497661914",
     "@cup_vehicles":        "541888371",
